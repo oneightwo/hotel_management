@@ -108,7 +108,7 @@ public class ReportServiceImpl implements ReportService {
 
         histories.forEach(history -> {
             RoomDto room = history.getBooking().getRoom();
-            String category = room.getName() + ": " + room.getFloor() + " / " + room.getNumber();
+            String category = room.getName() + ": Этаж(" + room.getFloor() + ") / Номер(" + room.getNumber() + ")";
             int count = 0;
             try {
                 count = dataset.getValue(category).intValue();
