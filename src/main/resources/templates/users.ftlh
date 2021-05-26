@@ -20,11 +20,11 @@
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th scope="col">Название</th>
-                    <th scope="col">Описание</th>
-                    <th scope="col">Этаж</th>
-                    <th scope="col">Номер</th>
-                    <th scope="col">Этаж</th>
+                    <th scope="col">Имя пользователя</th>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Отчество</th>
+                    <th scope="col">Роль</th>
                 </tr>
                 </thead>
                 <#list users as user>
