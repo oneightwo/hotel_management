@@ -1,5 +1,6 @@
 package com.hotel_management.model;
 
+import com.hotel_management.dto.BookingDto;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -30,8 +31,6 @@ public class History {
 
     @Type(type = "jsonb")
     @Column(columnDefinition = "jsonb")
-    private Booking booking;
-
-    private String comment;
+    private BookingDto booking;
 
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -41,7 +43,12 @@ public class Booking {
     @JoinColumn(name = "private_user_information_id", referencedColumnName = "id")
     private PrivateUserInformation privateUserInformation;
 
+    @Column(name = "from_date")
     private LocalDateTime fromDate;
 
+    @Column(name = "end_date")
     private LocalDateTime endDate;
+
+    @Column(name = "total_price")
+    private BigDecimal totalPrice;
 }

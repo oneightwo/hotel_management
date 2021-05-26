@@ -23,6 +23,7 @@
                 <a class="btn btn-primary mr-1" href="/users/registration">Зарегистрировать</a>
             </#if>
             <#if authUser.role == "MANAGER" || authUser.role == "OWNER">
+                <a class="btn btn-info mr-1" href="/rooms/reports">Создать отчет</a>
                 <a class="btn btn-success mr-1" href="/rooms/create">Добавить комнату</a>
             </#if>
             <a class="btn btn-outline-danger mr-1" href="/logout">Выйти</a>

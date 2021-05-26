@@ -6,9 +6,14 @@ import com.hotel_management.model.Booking;
 import com.hotel_management.model.Room;
 import com.hotel_management.security.SecurityUtils;
 import com.hotel_management.service.BookingService;
+import com.hotel_management.service.ReportService;
 import com.hotel_management.service.RoomService;
 import lombok.RequiredArgsConstructor;
 import ma.glasnost.orika.MapperFacade;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -30,6 +36,7 @@ public class RoomResource {
     private final MapperFacade mapper;
     private final RoomService roomService;
     private final BookingService bookingService;
+    private final ReportService reportService;
 
     @GetMapping
     private String getRoomsPage(Model model) {
@@ -79,5 +86,19 @@ public class RoomResource {
         roomDto.setId(id);
         roomService.update(mapper.map(roomDto, Room.class));
         return "redirect:/rooms";
+    }
+
+    @GetMapping("/reports")
+    private ResponseEntity<?> getReport() {
+        ByteArrayInputStream bis = reportService.getReport();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", "inline; filename=Отчет.pdf");
+
+        return ResponseEntity
+                .ok()
+                .headers(headers)
+                .contentType(MediaType.APPLICATION_PDF)
+                .body(new InputStreamResource(bis));
     }
 }

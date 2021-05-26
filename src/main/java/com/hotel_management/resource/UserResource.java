@@ -33,7 +33,11 @@ public class UserResource {
 
     @PostMapping("/users/registration")
     private String createUser(@ModelAttribute("user") UserDto userDto) {
-        userService.save(mapper.map(userDto, User.class));
+        try {
+            userService.save(mapper.map(userDto, User.class));
+        } catch (Exception e) {
+            return "redirect:/users/registration?error";
+        }
         return "redirect:/users";
     }
 

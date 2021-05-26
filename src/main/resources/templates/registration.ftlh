@@ -73,5 +73,10 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        if (window.location.href.includes("error")) {
+            alert("Имя пользователя уже существует");
+        }
+    </script>
 
 </@c.page>

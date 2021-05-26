@@ -40,7 +40,7 @@
                                         <label for="price">Цена</label>
                                         <input type="number" min="1" step="any" class="form-control" id="price"
                                                name="price"
-                                               value="${booking.room.price}" required disabled>
+                                               value="${booking.room.price?string.computer}" required disabled>
                                     </div>
                                 </div>
                             </div>
@@ -77,6 +77,12 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
+                                        <label for="price">Цена брони</label>
+                                        <input type="number" min="1" step="any" class="form-control" id="price"
+                                               name="price"
+                                               value="${booking.totalPrice?string.computer}" disabled>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="fromDate">Бронь с</label>
                                         <input type="datetime-local" class="form-control" id="fromDate"
                                                name="fromDate"
@@ -95,7 +101,7 @@
                     <div class="card-footer">
                         <button form="editBooking" type="submit" class="btn btn-success">Сохранить</button>
                         <a class="btn btn-warning" href="/rooms">Отменить</a>
-                        <button class="btn btn-danger" onclick="deleteBooking(${booking.id})">Удалить</button>
+                        <button class="btn btn-danger" onclick="deleteBooking(${booking.id})">Завершить бронь</button>
                     </div>
                 </div>
             </div>

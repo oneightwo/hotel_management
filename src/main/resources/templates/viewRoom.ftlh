@@ -32,7 +32,7 @@
                             <div class="form-group">
                                 <label for="price">Цена</label>
                                 <input type="number" min="1" step="any" class="form-control" id="price" name="price"
-                                       value="${room.price}" required disabled>
+                                       value="${room.price?string.computer}" required disabled>
                             </div>
                         </form>
                     </div>

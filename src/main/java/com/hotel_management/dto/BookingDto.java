@@ -3,6 +3,7 @@ package com.hotel_management.dto;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -29,4 +30,6 @@ public class BookingDto {
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime endDate;
+
+    private BigDecimal totalPrice;
 }

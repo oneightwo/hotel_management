@@ -22,7 +22,7 @@
                             <td>${room.description}</td>
                             <td>${room.floor}</td>
                             <td>${room.number}</td>
-                            <td>${room.price}</td>
+                            <td>${room.price?string.computer}</td>
                         </tr>
                     <#else>
                         <tr onclick="openRoom(${room.id})">
@@ -30,7 +30,7 @@
                             <td>${room.description}</td>
                             <td>${room.floor}</td>
                             <td>${room.number}</td>
-                            <td>${room.price}</td>
+                            <td>${room.price?string.computer}</td>
                         </tr>
                     </#if>
                     </tbody>
