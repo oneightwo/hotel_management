@@ -27,7 +27,7 @@
                                 <input type="number" class="form-control" id="floor" name="floor" required>
                             </div>
                             <div class="form-group">
-                                <label for="price">Цена</label>
+                                <label for="price">Цена за сутки</label>
                                 <input type="number" min="1" step="any" class="form-control" id="price" name="price" required>
                             </div>
                         </form>

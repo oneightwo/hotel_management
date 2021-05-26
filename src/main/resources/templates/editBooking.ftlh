@@ -37,7 +37,7 @@
                                                required disabled>
                                     </div>
                                     <div class="form-group">
-                                        <label for="price">Цена</label>
+                                        <label for="price">Цена за сутки</label>
                                         <input type="number" min="1" step="any" class="form-control" id="price"
                                                name="price"
                                                value="${booking.room.price?string.computer}" required disabled>

@@ -11,7 +11,7 @@
                     <th scope="col">Описание</th>
                     <th scope="col">Этаж</th>
                     <th scope="col">Номер</th>
-                    <th scope="col">Этаж</th>
+                    <th scope="col">Цена за сутки</th>
                 </tr>
                 </thead>
                 <#list rooms as room>
