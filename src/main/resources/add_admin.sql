@@ -1,0 +1,2 @@
+insert into users(id, date_of_birth, description, password, role, username, created_by_id, private_user_information_id)
+values (nextval('user_id_seq'), current_date, 'description', 'admin', 0, 'admin', null, null);
