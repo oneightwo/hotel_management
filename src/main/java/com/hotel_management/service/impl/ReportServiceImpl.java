@@ -1,6 +1,7 @@
 package com.hotel_management.service.impl;
 
 import com.hotel_management.dto.BookingDto;
+import com.hotel_management.dto.RoomDto;
 import com.hotel_management.model.History;
 import com.hotel_management.repository.HistoryRepository;
 import com.hotel_management.service.ReportService;
@@ -106,7 +107,8 @@ public class ReportServiceImpl implements ReportService {
         DefaultPieDataset dataset = new DefaultPieDataset();
 
         histories.forEach(history -> {
-            String category = history.getBooking().getRoom().getName();
+            RoomDto room = history.getBooking().getRoom();
+            String category = room.getName() + ": " + room.getFloor() + " / " + room.getNumber();
             int count = 0;
             try {
                 count = dataset.getValue(category).intValue();
